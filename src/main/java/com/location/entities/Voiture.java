@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 //model
@@ -33,6 +35,13 @@ public class Voiture {
 	private float prixJour;
 	@OneToMany(mappedBy = "voiture")
 	private List<Location> locations = new ArrayList<Location>();
+
+	@ManyToOne
+	@JoinColumn(name = "modele_id")
+	private Modele modele;
+
+	@OneToMany(mappedBy = "reservation")
+	private List<Reservation> reservations;
 
 	public int getId() {
 		return id;

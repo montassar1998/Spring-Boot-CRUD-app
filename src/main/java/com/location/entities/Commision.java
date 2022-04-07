@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Commision {
@@ -19,4 +21,8 @@ public class Commision {
 
 	@Column(name = "percent")
 	private float percent;
+
+	@ManyToOne
+	@JoinColumn(name = "reservation_id")
+	private Reservation reservation;
 }

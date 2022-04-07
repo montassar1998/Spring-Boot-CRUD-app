@@ -1,6 +1,5 @@
 package com.location.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -31,8 +30,14 @@ public class Client {
 	@Column(name = "numTel")
 	private String numTel;
 
-	@OneToMany(mappedBy = "client")
-	private List<Location> locations = new ArrayList<Location>();
+	@OneToMany(mappedBy = "message")
+	private List<Message> messages;
+
+	@OneToMany(mappedBy = "reservation")
+	private List<Reservation> reservations;
+
+	@OneToMany(mappedBy = "id_reclamation")
+	private List<Reclamation> reclamations;
 
 	public long getId() {
 		return id;
@@ -72,14 +77,6 @@ public class Client {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
-	}
-
-	public List<Location> getLocations() {
-		return locations;
-	}
-
-	public void setLocations(List<Location> locations) {
-		this.locations = locations;
 	}
 
 }
