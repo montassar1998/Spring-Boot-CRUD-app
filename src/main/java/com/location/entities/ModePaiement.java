@@ -10,14 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class ModePaiement {
+public class Modepaiement {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idModePaiement;
+	private int id;
 
 	@Column(name = "descModePaiement")
 	private DescModePaiement descModePaiement;
 
-	@OneToMany(mappedBy = "id_reservation")
+	@OneToMany(mappedBy = "modepaiement")
 	private List<Reservation> reservations;
 }

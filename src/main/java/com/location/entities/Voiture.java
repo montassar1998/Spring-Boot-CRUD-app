@@ -40,15 +40,15 @@ public class Voiture {
 	private List<Location> locations = new ArrayList<Location>();
 
 	@ManyToOne
-	@JoinColumn(name = "modele_id")
+	@JoinColumn(name = "modeleId")
 	private Modele modele;
 
-	@OneToMany(mappedBy = "reservation")
+	@OneToMany(mappedBy = "voiture")
 	private List<Reservation> reservations;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "promotion", joinColumns = @JoinColumn(name = "column_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "voiture_id", referencedColumnName = "id"))
-	private List<Promotion> promotions;
+	@JoinTable(name = "promotion", joinColumns = @JoinColumn(name = "voiture_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "promotion_id", referencedColumnName = "id"))
+	private List<Promotion> promotion;
 
 	public int getId() {
 		return id;

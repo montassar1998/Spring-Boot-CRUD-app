@@ -29,9 +29,9 @@ public class Gestionnaire {
 	@Column(name = "numTel")
 	private String numTel;
 
-	@OneToMany(mappedBy = "id_commission")
+	@OneToMany(mappedBy = "gestionnaire")
 	private List<Commision> commisions;
 
-	@OneToMany(mappedBy = "id_message")
+	@OneToMany(mappedBy = "gestionnaire")
 	private List<Message> messages;
 }

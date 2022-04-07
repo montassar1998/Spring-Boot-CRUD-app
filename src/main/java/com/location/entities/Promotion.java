@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
 public class Promotion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idPromotion;
+	private long id;
 
 	@Column(name = "dateD")
 	private Date dateD;
@@ -25,6 +25,6 @@ public class Promotion {
 	@Column(name = "pourcentage")
 	private float pourcentage;
 
-	@ManyToMany(mappedBy = "voitures")
-	private List<Voiture> voitures;
+	@ManyToMany(mappedBy = "promotion")
+	private List<Voiture> voiture;
 }

@@ -14,12 +14,14 @@ import javax.persistence.ManyToOne;
 public class Message {
 
 	@Id
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idMsg;
-	@Column(name = "from")
-	private String from;
-	@Column(name = "to")
-	private String to;
+	private long id;
+
+	@Column(name = "sentby")
+	private String sentby;
+	@Column(name = "sentto")
+	private String sentto;
 	@Column(name = "dateEnvoi")
 	private Date dateEnvoi;
 	@Column(name = "msg")
@@ -30,10 +32,10 @@ public class Message {
 	private Client client;
 
 	@ManyToOne
-	@JoinColumn(name = "id_gestionnaire")
+	@JoinColumn(name = "gestionnaire_id")
 	private Gestionnaire gestionnaire;
 
 	@ManyToOne
-	@JoinColumn(name = "id_motif")
+	@JoinColumn(name = "motif_id")
 	private Motif motif;
 }

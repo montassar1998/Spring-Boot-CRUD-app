@@ -17,11 +17,11 @@ public class Reservation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idRes;
+	private long id;
 
 	@Column(name = "dateDebut")
 	private Date dateDebut;
-	@Column(name = "dateRtour")
+	@Column(name = "dateRetour")
 	private Date dateRetour;
 	@Column(name = "etatConfirmation")
 	private boolean etatConfirmation;
@@ -30,7 +30,7 @@ public class Reservation {
 	@JoinColumn(name = "car_id")
 	private Voiture voiture;
 
-	@OneToMany(mappedBy = "commission")
+	@OneToMany(mappedBy = "reservation")
 	private List<Commision> commision;
 
 	@ManyToOne
@@ -38,11 +38,15 @@ public class Reservation {
 	private Facture facture;
 
 	@ManyToOne
-	@JoinColumn(name = "client")
+	@JoinColumn(name = "client_id")
 	private Client client;
 
 	@ManyToOne
 	@JoinColumn(name = "reclamation_id")
 	private Reclamation reclamation;
+
+	@ManyToOne
+	@JoinColumn(name = "Modepaiement_id")
+	private Modepaiement modepaiement;
 
 }

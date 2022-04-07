@@ -14,14 +14,14 @@ public class Motif {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idMotif;
+	private long id;
 
 	@Column(name = "libelle")
 	private String libelle;
 
-	@OneToMany(mappedBy = "id_reclamation")
+	@OneToMany(mappedBy = "motif")
 	private List<Reclamation> reclamations;
 
-	@OneToMany(mappedBy = "id_message")
+	@OneToMany(mappedBy = "motif")
 	private List<Message> messages;
 }

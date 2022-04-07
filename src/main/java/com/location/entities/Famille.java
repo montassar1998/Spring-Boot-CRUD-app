@@ -14,11 +14,11 @@ public class Famille {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String idFamille;
+	private String id;
 
 	@Column(name = "description")
 	private String description;
 
-	@OneToMany(mappedBy = "Famille")
+	@OneToMany(mappedBy = "famille")
 	private List<Modele> modeles;
 }

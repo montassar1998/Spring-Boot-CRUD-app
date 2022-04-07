@@ -21,9 +21,9 @@ public class Modele {
 	private String marque;
 
 	@ManyToOne
-	@JoinColumn(name = "id_famille")
+	@JoinColumn(name = "famille_id")
 	private Famille famille;
 
-	@OneToMany(mappedBy = "famille")
+	@OneToMany(mappedBy = "modele")
 	private List<Voiture> voitures;
 }

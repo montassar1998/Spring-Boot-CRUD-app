@@ -23,10 +23,10 @@ public class Commision {
 	private float percent;
 
 	@ManyToOne
-	@JoinColumn(name = "reservation_id")
+	@JoinColumn(name = "reservation")
 	private Reservation reservation;
 
 	@ManyToOne
-	@JoinColumn(name = "id_gestionnaire")
+	@JoinColumn(name = "gestionnaire_id")
 	private Gestionnaire gestionnaire;
 }

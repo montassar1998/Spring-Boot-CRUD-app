@@ -13,12 +13,12 @@ import javax.persistence.OneToMany;
 public class Facture {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idFact;
+	private long id;
 
 	@Column(name = "prixTotal")
 	private float prixTotal;
 
-	@OneToMany(mappedBy = "reservation")
+	@OneToMany(mappedBy = "facture")
 	private List<Reservation> reservations;
 
 }

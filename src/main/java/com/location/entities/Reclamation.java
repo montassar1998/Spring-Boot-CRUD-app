@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 public class Reclamation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idRec;
+	private long id;
 
 	@Column(name = "details")
 	private String details;
@@ -24,19 +24,19 @@ public class Reclamation {
 	@Column(name = "dateRec")
 	private Date dateRec;
 
-	@OneToMany(mappedBy = "id_reservation")
+	@OneToMany(mappedBy = "reclamation")
 	private List<Reservation> reservations;
 
 	@ManyToOne
-	@JoinColumn(name = "id_client")
+	@JoinColumn(name = "client_id")
 	private Client client;
 
 	@ManyToOne
-	@JoinColumn(name = "id_motif")
+	@JoinColumn(name = "motif_id")
 	private Motif motif;
 
 	@ManyToOne
 	@JoinColumn(name = "id_mode_paiement")
-	private List<ModePaiement> modePaiements;
+	private Modepaiement modePaiements;
 
 }

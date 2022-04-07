@@ -30,13 +30,13 @@ public class Client {
 	@Column(name = "numTel")
 	private String numTel;
 
-	@OneToMany(mappedBy = "message")
+	@OneToMany(mappedBy = "client")
 	private List<Message> messages;
 
-	@OneToMany(mappedBy = "reservation")
+	@OneToMany(mappedBy = "client")
 	private List<Reservation> reservations;
 
-	@OneToMany(mappedBy = "id_reclamation")
+	@OneToMany(mappedBy = "client")
 	private List<Reclamation> reclamations;
 
 	public long getId() {
