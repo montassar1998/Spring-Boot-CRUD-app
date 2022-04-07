@@ -28,4 +28,12 @@ public class Message {
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private Client client;
+
+	@ManyToOne
+	@JoinColumn(name = "id_gestionnaire")
+	private Gestionnaire gestionnaire;
+
+	@ManyToOne
+	@JoinColumn(name = "id_motif")
+	private Motif motif;
 }

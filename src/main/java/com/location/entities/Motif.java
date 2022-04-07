@@ -22,4 +22,6 @@ public class Motif {
 	@OneToMany(mappedBy = "id_reclamation")
 	private List<Reclamation> reclamations;
 
+	@OneToMany(mappedBy = "id_message")
+	private List<Message> messages;
 }

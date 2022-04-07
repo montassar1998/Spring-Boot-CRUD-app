@@ -1,10 +1,13 @@
 package com.location.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Gestionnaire {
@@ -25,4 +28,10 @@ public class Gestionnaire {
 	private String adresse;
 	@Column(name = "numTel")
 	private String numTel;
+
+	@OneToMany(mappedBy = "id_commission")
+	private List<Commision> commisions;
+
+	@OneToMany(mappedBy = "id_message")
+	private List<Message> messages;
 }

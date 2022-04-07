@@ -25,4 +25,8 @@ public class Commision {
 	@ManyToOne
 	@JoinColumn(name = "reservation_id")
 	private Reservation reservation;
+
+	@ManyToOne
+	@JoinColumn(name = "id_gestionnaire")
+	private Gestionnaire gestionnaire;
 }
