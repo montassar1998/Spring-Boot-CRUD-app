@@ -31,4 +31,9 @@ public class ModeleService {
 	public void delete(long id) {
 		repository.deleteById(id);
 	}
+
+	public void deleteAll() {
+		repository.deleteAll();
+	}
+
 }

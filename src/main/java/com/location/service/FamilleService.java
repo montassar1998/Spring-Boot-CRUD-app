@@ -31,4 +31,9 @@ public class FamilleService {
 	public void delete(long id) {
 		family.deleteById(id);
 	}
+
+	public void deleteAll() {
+		family.deleteAll();
+
+	}
 }
