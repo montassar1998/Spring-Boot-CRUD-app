@@ -14,11 +14,36 @@ public class Famille {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
+	private int id;
 
 	@Column(name = "description")
 	private String description;
 
 	@OneToMany(mappedBy = "famille")
 	private List<Modele> modeles;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id2) {
+		this.id = id2;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<Modele> getModeles() {
+		return modeles;
+	}
+
+	public void setModeles(List<Modele> modeles) {
+		this.modeles = modeles;
+	}
+
 }

@@ -26,4 +26,37 @@ public class Modele {
 
 	@OneToMany(mappedBy = "modele")
 	private List<Voiture> voitures;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getMarque() {
+		return marque;
+	}
+
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+	public Famille getFamille() {
+		return famille;
+	}
+
+	public void setFamille(Famille famille) {
+		this.famille = famille;
+	}
+
+	public List<Voiture> getVoitures() {
+		return voitures;
+	}
+
+	public void setVoitures(List<Voiture> voitures) {
+		this.voitures = voitures;
+	}
+
 }
